@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
   "title":"Australia Data Science Jobd Friend Reccomendation Level on Rating",
-  "width":500,
+  "width":495,
   "data": {"url": "https://raw.githubusercontent.com/aldrichlado/FIT3179_Assignment2/main/data/AustraliaDataScienceJobsWrangled.csv"},
   "mark": "point",
   "encoding": {
