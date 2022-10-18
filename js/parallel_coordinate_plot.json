@@ -3,6 +3,50 @@
   "title": "Parallel Coordinate Plot for Multiple Companies Attribute on Different Location",
   "params": [
     {
+      "name": "Min_selection_opportunities",
+      "value": 1,
+      "bind":{
+        "input": "range",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "name": "Minimum Career Opportunities: "
+      }
+    },
+    {
+      "name": "Min_selection_culture",
+      "value": 1,
+      "bind":{
+        "input": "range",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "name": "Minimum Culture and Values: "
+      }
+    },
+    {
+      "name": "Min_selection_work",
+      "value": 1,
+      "bind":{
+        "input": "range",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "name": "Minimum Work Life Balance: "
+      }
+    },
+    {
+      "name": "Min_selection_compensation",
+      "value": 1,
+      "bind":{
+        "input": "range",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "name": "Minimum Compensation and Benefits: "
+      }
+    },
+    {
       "name": "Select_city",
       "value": ["null"],
       "bind": {
@@ -34,7 +78,7 @@
   "width": 900,
   "height": 300,
   "transform": [
-    {"filter": "datum.CompanyFriendReccomendation && Select_city=='null'?Select_city:datum.JobLocation == Select_city"},
+    {"filter": "datum.CompanyCareerOpportunities >= Min_selection_opportunities && datum.CompanyWorkLifeBalance >= Min_selection_work && datum.CompensationAndBenefits >= Min_selection_compensation && datum.CompanyCultureAndValues >= Min_selection_culture && Select_city=='null'?Select_city:datum.JobLocation == Select_city && datum.CompanyCareerOpportunities >= Min_selection_opportunities && datum.CompanyWorkLifeBalance >= Min_selection_work && datum.CompensationAndBenefits >= Min_selection_compensation && datum.CompanyCultureAndValues >= Min_selection_culture"},
     {"window": [{"op": "count", "as": "index"}]},
     {"fold": ["CompanyWorkLifeBalance", "CompanyCareerOpportunities", "CompensationAndBenefits", "CompanyCultureAndValues"]},
     {
