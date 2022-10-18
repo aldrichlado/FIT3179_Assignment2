@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {"view": {"stroke": ""}},
+  "width": 800,
+  "height": 200,
+  "data": {
+    "values": [
+      {"country": "Great Britain", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "Great Britain", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "Great Britain", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "Great Britain", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "Great Britain", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "Great Britain", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "United States", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "United States", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "United States", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "United States", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "United States", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "United States", "animal": "pigs", "img": "data/ffox.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "cattle", "img": "data/gimp.png"},
+      {"country": "United States", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "United States", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "United States", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "United States", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "United States", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "United States", "animal": "sheep", "img": "data/7zip.png"},
+      {"country": "United States", "animal": "sheep", "img": "data/7zip.png"}
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "{'cattle': '🐄', 'pigs': '🐖', 'sheep': '🐏'}[datum.animal]",
+      "as": "emoji"
+    },
+    {"window": [{"op": "rank", "as": "rank"}], "groupby": ["country", "animal"]}
+  ],
+  "mark": {"type": "image", "baseline": "middle"},
+  "encoding": {
+    "x": {"field": "rank", "type": "ordinal", "axis": null},
+    "y": {"field": "animal", "type": "nominal", "axis": null, "sort": null},
+    "row": {"field": "country", "header": {"title": ""}},
+    "url": {"field": "img", "type": "nominal"},
+    "size": {"value": 65}
+  }
+}
