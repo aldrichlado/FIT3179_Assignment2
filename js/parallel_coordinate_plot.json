@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Though Vega-Lite supports only one scale per axes, one can create a parallel coordinate plot by folding variables, using `joinaggregate` to normalize their values and using ticks and rules to manually create axes.",
+  "title": "Parallel Coordinate Plot for Multiple Companies Attribute on Different Location",
   "params": [
     {
       "name": "Select_city",
@@ -14,7 +14,7 @@
           "Gold Coast",
           "Adelaide",
           "Perth",
-          "Brisbaine"
+          "Brisbane"
         ],
         "labels": ["All",
           "Melbourne",
@@ -22,7 +22,7 @@
           "Gold Coast",
           "Adelaide",
           "Perth",
-          "Brisbaine"
+          "Brisbane"
           ],
         "name": "City: "
       }
@@ -31,7 +31,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/aldrichlado/FIT3179_Assignment2/main/data/AustraliaDataScienceJobsWrangled.csv"
   },
-  "width": 600,
+  "width": 900,
   "height": 300,
   "transform": [
     {"filter": "datum.CompanyFriendReccomendation && Select_city=='null'?Select_city:datum.JobLocation == Select_city"},
@@ -49,7 +49,7 @@
       "as": "norm_val"
     },
     {
-      "calculate": "3",
+      "calculate": "(datum.min + datum.max) / 2",
       "as": "mid"
     }
   ],
@@ -68,17 +68,24 @@
       "x": {"type": "nominal", "field": "key"},
       "y": {"type": "quantitative", "field": "norm_val", "axis": null},
       "tooltip": [{
-        "type": "quantitative",
-        "field": "CompanyWorkLifeBalance"
+        "type": "nominal",
+        "field": "Company"
       }, {
         "type": "quantitative",
-        "field": "CompanyCarrerOpportunitites"
+        "field": "CompanyWorkLifeBalance",
+        "title": "Work Life Balance"
       }, {
         "type": "quantitative",
-        "field": "CompensationAndBenefits"
+        "field": "CompanyCareerOpportunities",
+        "title": "Career Opportunities"
       }, {
         "type": "quantitative",
-        "field": "CompanyCultureAndValues"
+        "field": "CompensationAndBenefits",
+        "title": "Compensation and Benefits"
+      }, {
+        "type": "quantitative",
+        "field": "CompanyCultureAndValues",
+        "title": "Culture and Values"
       }]
     }
   }, {
