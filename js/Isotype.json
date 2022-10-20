@@ -3,14 +3,11 @@
   "config": {"view": {"stroke": ""}},
   "width": 800,
   "height": 200,
-  "data": {
-    "url": "https://raw.githubusercontent.com/aldrichlado/FIT3179_Assignment2/main/data/IsotypeDataset.csv"
-  },
+  "data": {"url" : "https://raw.githubusercontent.com/aldrichlado/FIT3179_Assignment2/main/data/IsotypeDataset.csv"
+  }
+  ,
   "transform": [
-    {
-      "window": [{"op": "rank", "as": "rank"}],
-      "groupby": ["JobLocation", "Skill"]
-    }
+    {"window": [{"op": "rank", "as": "rank"}], "groupby": ["JobLocation", "Skill"]}
   ],
   "mark": {"type": "image", "baseline": "middle"},
   "encoding": {
@@ -18,6 +15,14 @@
     "y": {"field": "Skill", "type": "nominal", "axis": null, "sort": null},
     "row": {"field": "JobLocation", "header": {"title": ""}},
     "url": {"field": "Url", "type": "nominal"},
-    "size": {"value": 65}
+    "tooltip": [{
+        "type": "nominal",
+        "field": "JobLocation",
+        "title": "Location"
+      }, {
+        "type": "nominal",
+        "field": "Skill",
+        "title": "Software Skill"
+      }]
   }
 }
