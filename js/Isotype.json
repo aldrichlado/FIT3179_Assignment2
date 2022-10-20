@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {"view": {"stroke": ""}},
+  "width": 800,
+  "height": 200,
+  "data": {
+    "url": "https://raw.githubusercontent.com/aldrichlado/FIT3179_Assignment2/main/data/IsotypeDataset.csv"
+  },
+  "transform": [
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "groupby": ["JobLocation", "Skill"]
+    }
+  ],
+  "mark": {"type": "image", "baseline": "middle"},
+  "encoding": {
+    "x": {"field": "rank", "type": "ordinal", "axis": null},
+    "y": {"field": "Skill", "type": "nominal", "axis": null, "sort": null},
+    "row": {"field": "JobLocation", "header": {"title": ""}},
+    "url": {"field": "Url", "type": "nominal"},
+    "size": {"value": 65}
+  }
+}
