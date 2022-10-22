@@ -54,12 +54,14 @@
               {
                 "field": "AvgSalary",
                 "type": "quantitative",
-                "title": "Average Base Salary"
+                "title": "Average Base Salary",
+                "format": ".2f"
               },
               {
                 "field": "AvgRating",
                 "type": "quantitative",
-                "title": "Companies Average Rating"
+                "title": "Companies Average Rating",
+                "format": ".2f"
               }
             ]
           }
