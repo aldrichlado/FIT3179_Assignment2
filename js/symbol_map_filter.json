@@ -100,7 +100,7 @@
       "title":["Use this bar chart to filter out data", "based on Average Base Salary"],
       "width": 350,
       "height": 50,
-      "mark": "point",
+      "mark": "bar",
       "params":[
         {
           "name": "City_brush",
@@ -110,7 +110,11 @@
       "encoding": {
         "x": {"field": "AvgSalary",
           "type": "quantitative",
-          "title": "Average Base Salary ($AUD)"
+          "title": "Average Base Salary ($AUD)",
+          "scale": {"domain": [80000, 120000]}
+          },
+          "x2":{
+            "datum": 80000
           },
         "y": {"field": "City", "type": "ordinal"}
       }
