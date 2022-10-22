@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Pie Chart with percentage_tooltip",
+  "data": { "url": "https://raw.githubusercontent.com/aldrichlado/FIT3179_Assignment2/main/data/PieChart.csv"
+  },
+  "hconcat":[
+    {
+      "transform": [
+        {
+          "filter": {
+            "param": "brush"
+            }
+          },
+        {
+          "joinaggregate": [{
+            "op": "count",
+            "field": "JobTitle",
+            "as": "JobTitleCount"
+           }]
+        },
+        {
+          "joinaggregate": [{
+            "op": "count",
+            "field": "JobTitle",
+            "as": "CountJobTitle"
+           }],
+           "groupby": ["JobTitle"]
+        }
+      ],
+      "mark": {"type": "arc"},
+      "encoding": {
+        "theta": {"field": "JobTitleCount", "type": "quantitative", "stack": "normalize"},
+        "color": {"field": "JobTitle", "type": "nominal"},
+        "tooltip": [
+          {
+            "field": "JobTitle",
+            "type": "nominal",
+            "title": "Job Title"
+          },
+          {
+            "field": "CountJobTitle",
+            "type": "quantitative",
+            "title": "Total Job"
+          }
+        ]
+      }
+    },
+    {    
+      "mark": "point",
+      "params": [
+        {
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x","y"]}
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "CompanyRating",
+          "type": "quantitative",
+          "title": "Rating (0-5)",
+          "scale": {"domain": [1, 5]}
+        },
+        "y": {
+          "field": "CompensationAndBenefits",
+          "type": "quantitative",
+          "title": "Compensation Level (0-5)",
+          "scale": {"domain": [1, 5]}
+        },
+        "color": {"field": "JobTitle", "type": "nominal", "title": "Job Title"},
+        "tooltip": [
+          {"field": "JobTitle", "type": "nominal"},
+          {
+            "field": "Company",
+            "type": "nominal",
+            "title": "Company"
+          },
+          {
+            "field": "CompanyRating",
+            "type": "quantitative",
+            "title": "Rating"
+          },
+          {
+            "field": "CompensationAndBenefits",
+            "type": "quantitative",
+            "title": "Compensation Level"
+          }
+        ]
+      }
+    }
+  ]
+}
