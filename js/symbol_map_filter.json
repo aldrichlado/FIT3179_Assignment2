@@ -5,9 +5,9 @@
   },
   "vconcat": [
     {
-      "width": 500,
-      "height": 450,
-      "title": ["Average Base Salary and Company Rating for Data Science Jobs","in Australia in August, 2022"],
+      "width": 350,
+      "height": 300,
+      "title": ["Average Base Salary and Company Rating", "for Data Science Jobs","in Australia in August, 2022"],
       "projection": {"type": "mercator"},
       "layer": [
         {
@@ -97,11 +97,11 @@
       ]
     },
     {
-      "title":"Use this bar chart to filter out data based on Average Base Salary",
-      "width": 500,
+      "title":["Use this bar chart to filter out data", "based on Average Base Salary"],
+      "width": 350,
       "height": 50,
-      "mark": "bar",
-      "params": [
+      "mark": "point",
+      "params":[
         {
           "name": "City_brush",
           "select": {"type": "interval", "encodings": ["x"]}
