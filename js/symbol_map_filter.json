@@ -70,6 +70,7 @@
                   "window": [{"op": "rank", "as": "ranking"}],
                   "sort": [{"field": "AvgRating", "order": "descending"}]
                 },
+                {"filter": {"param": "City_brush"}},
                 {"filter": "datum.ranking == 1"},
                 {
                   "calculate": "'The best average rating for the selected; range of base salary is: ' + datum['AvgRating']",
