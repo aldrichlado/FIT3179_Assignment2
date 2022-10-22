@@ -55,17 +55,17 @@
           "null",
           "Melbourne",
           "Sydney",
-          "Gold Coast",
           "Adelaide",
           "Perth",
+          "Gold Coast",
           "Brisbane"
         ],
         "labels": ["All",
           "Melbourne",
           "Sydney",
-          "Gold Coast",
           "Adelaide",
           "Perth",
+          "Gold Coast",
           "Brisbane"
           ],
         "name": "City: "
