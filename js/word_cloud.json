@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A word cloud visualization depicting Vega research paper abstracts.",
   "title": "Word Cloud on the Most Occured Word Appeared in the Job Title",
-  "width": 625,
+  "width": 850,
   "height": 300,
   "padding": 0,
   "data": [
@@ -57,7 +57,7 @@
       "transform": [
         {
           "type": "wordcloud",
-          "size": [625, 300],
+          "size": [850, 300],
           "text": {"field": "text"},
           "rotate": {"field": "datum.angle"},
           "font": "Helvetica Neue, Arial",

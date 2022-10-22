@@ -5,7 +5,7 @@
   },
   "hconcat":[
     {
-      "width": 300,
+      "width": 400,
       "height": 300,
       "title": ["Job Title Breakdown:", "Proportion of Data Science Jobs listed"],
       "transform": [
@@ -49,7 +49,7 @@
       }
     },
     {    
-      "width": 360,
+      "width": 260,
       "height": 300,
       "title": ["Use This Chart to Select the Range of", "Rating and Compensation Level"],
       "mark": "point",
