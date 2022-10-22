@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
+  "width": 600,
   "height": 70,
   "title": ["Skills Required for a Data Science Job in Different Cities Per 100 Companies"],
   "config": {"view": {"stroke": ""}},

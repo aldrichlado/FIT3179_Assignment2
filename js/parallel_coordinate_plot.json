@@ -75,7 +75,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/aldrichlado/FIT3179_Assignment2/main/data/AustraliaDataScienceJobsWrangled.csv"
   },
-  "width": 730,
+  "width": 700,
   "height": 300,
   "transform": [
     {"filter": "datum.CompanyCareerOpportunities >= Min_selection_opportunities && datum.CompanyWorkLifeBalance >= Min_selection_work && datum.CompensationAndBenefits >= Min_selection_compensation && datum.CompanyCultureAndValues >= Min_selection_culture && Select_city=='null'?Select_city:datum.JobLocation == Select_city && datum.CompanyCareerOpportunities >= Min_selection_opportunities && datum.CompanyWorkLifeBalance >= Min_selection_work && datum.CompensationAndBenefits >= Min_selection_compensation && datum.CompanyCultureAndValues >= Min_selection_culture"},
