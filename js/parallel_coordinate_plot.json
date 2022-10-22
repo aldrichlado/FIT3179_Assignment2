@@ -8,7 +8,7 @@
       "bind":{
         "input": "range",
         "min": 1,
-        "max": 5,
+        "max": 4,
         "step": 1,
         "name": "Minimum Career Opportunities: "
       }
@@ -19,7 +19,7 @@
       "bind":{
         "input": "range",
         "min": 1,
-        "max": 5,
+        "max": 4,
         "step": 1,
         "name": "Minimum Culture and Values: "
       }
@@ -30,7 +30,7 @@
       "bind":{
         "input": "range",
         "min": 1,
-        "max": 5,
+        "max": 4,
         "step": 1,
         "name": "Minimum Work Life Balance: "
       }
@@ -41,7 +41,7 @@
       "bind":{
         "input": "range",
         "min": 1,
-        "max": 5,
+        "max": 4,
         "step": 1,
         "name": "Minimum Compensation and Benefits: "
       }
